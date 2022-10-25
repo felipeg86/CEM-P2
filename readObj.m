@@ -21,7 +21,6 @@ function obj = readObj(fname)
 v = []; vt = []; vn = []; f.v = []; f.vt = []; f.vn = [];
 
 fid = fopen(fname);
-
 % parse .obj file 
 while 1    
     tline = fgetl(fid);
