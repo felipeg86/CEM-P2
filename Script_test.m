@@ -6,8 +6,8 @@ clc;
 
 %obj = readObj('examples\example1.obj')
 
-%obj = readObj('Test_shapes\Surf_2.obj')
-obj = readObj('Test_shapes\Surf_3.obj')
+obj = readObj('Test_shapes\Surf_2.obj')
+%obj = readObj('Test_shapes\Surf_3.obj');
 
 %OBJ = read_wobj('examples\example1.obj')
 
