@@ -1,0 +1,19 @@
+classdef Core
+    properties
+        shapesFolder = 'Shapes'
+        files
+        elements
+    end
+    
+    methods        
+        function init = Core()
+            init.files = dir(fullfile(init.shapesFolder,'*.obj'));
+            init.files = string({files.name})';
+            
+        function obj = addElements()
+            
+        end
+
+        end
+    end
+end
