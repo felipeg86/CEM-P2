@@ -1,6 +1,9 @@
-clc; close all;
+clc; close all; clear;
 
-obj = PEC('Shapes\Surf_3.')
+obj = PEC('Shapes\Surf_3.obj');
+core = Core();
+disp(core.elements)
+core.sumar(5,8)
 
 %obj = readObj('Shapes\Surf_3.obj');
 %obj2 = readObj('Shapes\Surf_2.obj');
@@ -9,5 +12,5 @@ obj = PEC('Shapes\Surf_3.')
 
 %disp(length(objs))
 
-%plotElements(obj)
+%plotElements(obj.element)
 

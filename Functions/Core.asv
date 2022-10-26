@@ -4,16 +4,22 @@ classdef Core
         files
         elements
     end
-    
+
     methods        
         function init = Core()
             init.files = dir(fullfile(init.shapesFolder,'*.obj'));
-            init.files = string({files.name})';
-            
-        function obj = addElements()
-            
+            init.files = string({init.files.name})';
+            init.elements = [];
+            init.elements = PEC(init.shapesFolder+"\"+init.files);
+            for i = 1:length(init.files)
+                init.elements = [init.elements; PEC(init.shapesFolder+"\"+init.files(i))];
+            end
         end
+% 
+%         function obj = sumar(obj,c,d)
+%             obj.a = c+d;
+%             obj = c+d;
+%         end
 
-        end
     end
 end

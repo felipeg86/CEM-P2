@@ -1,9 +1,7 @@
-clc; close all;
+clc; close all; clear;
 
-obj = PEC('Shapes\Surf_3.obj');
-%element = obj.readObj();
-core = Core();
-core.addElements()
+simulation = Simulation();
+simulation.patchElements();
 
 %obj = readObj('Shapes\Surf_3.obj');
 %obj2 = readObj('Shapes\Surf_2.obj');
