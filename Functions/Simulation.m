@@ -6,6 +6,7 @@ classdef Simulation
     end
 
     methods        
+        % aca
         function init = Simulation()
             init.files = dir(fullfile(init.shapesFolder,'*.obj'));
             init.files = string({init.files.name})';
