@@ -3,22 +3,23 @@ classdef Simulation
         shapesFolder = 'Shapes'
         files
         elements
+        norm
+        a = 0
     end
 
-    methods        
-        % aca
+    methods    
         function init = Simulation()
             init.files = dir(fullfile(init.shapesFolder,'*.obj'));
             init.files = string({init.files.name})';
             init.elements = [];
             for i = 1:length(init.files)
-                init.elements = [init.elements; PEC(init.shapesFolder+"\"+init.files(i))];
+                newElement = PEC(init.shapesFolder+"\"+init.files(i));
+                init.elements = [init.elements; newElement];
             end
         end
         
-        function self = patchElements(self)
+        function [] = patchElements(self)
             obj = self.elements;
-            disp(obj(1,1))
             figure();
             hold on,
             FC = [1 1 1];
@@ -33,11 +34,6 @@ classdef Simulation
             grid on;
             grid minor;
         end
-% 
-%         function obj = sumar(obj,c,d)
-%             obj.a = c+d;
-%             obj = c+d;
-%         end
 
     end
 end

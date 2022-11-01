@@ -1,0 +1,8 @@
+clc; close all; clear;
+
+simulation = Simulation();
+%simulation.patchElements();
+
+simulation.sumar(3,2).;
+
+

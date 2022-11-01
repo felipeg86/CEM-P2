@@ -85,7 +85,7 @@ classdef PEC
             O = [0,0,0];
             r = obsPoint-O;
             rho = r-obj.normal.*(sum(r.*obj.normal));
-            
+            l = 
 
         end
         
