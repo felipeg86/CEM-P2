@@ -2,6 +2,6 @@ clc; close all; clear;
 
 simulation = Simulation();
 simulation.patchElements();
-normal = simulation.elements(end).normal;
+simulation.elements(end).potencial([4,4,4]);
 
 
