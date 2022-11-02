@@ -114,12 +114,26 @@ classdef PEC
 
             l_p = sum((P_p-P).*l);
             l_m = sum((P_m-P).*l);
+            
+            d = norm(R_m(:,:,1)-P_m(:,:,1));
 
             P0 = sum((P_m-P).*u);
+            R0 = sqrt((P0.^2)+d.^2);
             
-            d = norm(R_m-P_m);
+            % Falta terminar
+    
+            v(:,:,1) = sum(P0.*log((norm(R_p(:,:,1))+norm(l_p(:,:,1)))./(norm(R_m(:,:,1))+norm(l_m(:,:,1)))) - ...
+                abs(d).*(atan((P0.*norm(l_p(:,:,1)))./((R0.^2+abs(d).*norm(R_p(:,:,1)))))-...
+                atan((P0.*l_m(:,:,1))./((R0.^2+abs(d).*norm(R_m(:,:,1)))))));
 
-            v = sum(P0*log((R_p+l_p)/(R_m+l_m)) - abs(d)*(atan()));
+            v(:,:,2) = sum(P0.*log((norm(R_p(:,:,2))+norm(l_p(:,:,)))./(norm(R_m(:,:,1))+norm(l_m(:,:,1)))) - ...
+                abs(d).*(atan((P0.*norm(l_p(:,:,1)))./((R0.^2+abs(d).*norm(R_p(:,:,1)))))-...
+                atan((P0.*l_m(:,:,2))./((R0.^2+abs(d).*norm(R_m(:,:,1)))))));
+            
+            v(:,:,3) = sum(P0.*log((norm(R_p(:,:,1))+norm(l_p(:,:,1)))./(norm(R_m(:,:,1))+norm(l_m(:,:,1)))) - ...
+                abs(d).*(atan((P0.*norm(l_p(:,:,1)))./((R0.^2+abs(d).*norm(R_p(:,:,1)))))-...
+                atan((P0.*norm(l_m(:,:,3)))./((R0.^2+abs(d).*norm(R_m(:,:,1)))))));
+
 
         end
         
